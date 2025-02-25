@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const rutaCoches = require("./rutas/cocheRuta") //Aqui importamos el cocheRuta
-const rutaUsuario = require("./rutas/usuarioRuta")
+const  rutaUsuario = require("./rutas/usuarioRuta")
 
 //middleware son como filtros
 app.use(express.json())
