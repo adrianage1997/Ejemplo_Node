@@ -54,11 +54,11 @@ const findByMarca = async (req, res) => {
     return res.status(200).send(coches);
 }
 
-const findAll = async (req, res) => { //async es que es un método asincrono. Quiere decir que se ejecuta mientras el programa avanza
+const findAll = async (req, res) => {
+  //async es que es un método asincrono. Quiere decir que se ejecuta mientras el programa avanza
 
-    cocheList = await Coche.find(); //El find() es el de MongoDB. El await, es para decir al programa que no siga hasta que termine el metodo 
-    return res.status(200).send(cocheList);
-
+  const cocheList = await Coche.find() //El find() es el de MongoDB. El await, es para decir al programa que no siga hasta que termine el metodo
+  return res.status(200).send(cocheList)
 }
 
 const cargaInicial = async (req, res) => { 
@@ -70,7 +70,7 @@ const cargaInicial = async (req, res) => {
 
 const findById = async (req, res) => { 
 try{
-    coche = await Coche.findById(req.param.id); 
+    const coche = await Coche.findById(req.param.id) 
 
     if(!coche)
         return res.status(404).send("Coche no existe")
